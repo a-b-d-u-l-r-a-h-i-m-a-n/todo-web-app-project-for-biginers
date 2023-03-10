@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/home.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="MAIN">
+        <h1 id="heading">TODO APP</h1>
+        <hr>
+        <div>
+            <form action="/taskdata" method="POST">
+                <div id="des">
+                    <p>DESCRIPTION</p>
+                    <input name="task" id="no_out_line" style="border: none;" type="text" placeholder="what do you need to do?" required>
+                </div>
+                <hr>
+                <div id="des2">
+                    <div style="flex: 1;">
+                        <p style="margin: 0; padding: 0;">categery</p>
+                        <select id="checkoptions" Name="categery" Size="Number_of_options" required>  
+                            <option> choose a categery </option>
+                            <option> personal </option>  
+                            <option> school </option>  
+                            <option> cleaning </option>  
+                            <option> others </option>  
+                          </select>  
+                    </div>
+                    <hr>
+                    <div  style="flex: 1;">
+                        <p style="margin: 0; padding: 0;"> DUE date</p>
+                        <input type="date" id="taskdate" name="date" required>
+                    </div>
+                </div>
+                <hr>
+                <div id="btns">
+                    <button type="submit" id="add">+ ADD THE TASK</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <form action="/delete_" method="post">
+            <% for(let i of data){%>
+                <div style="display: flex;padding-top: 5px;">
+                    <div style="display: inline-flex;width: 5%;">
+                        <input type="checkbox" name="color[]" id="task" value=<%=i._id%> >
+                    </div>
+                    <div style="display: inline-flex;width: 95%;">
+                        <label style="width: 95%;" for="color[]">
+                            <div style="display: flex;">
+                                <div style="flex: 85%;text-align: left;"><%=i.task%>
+                                    <div>
+                                        <img src="" alt="">
+                                        <div><%=i.date%></div>
+                                    </div>
+                                </div>
+                                <div style="flex: 15%;"><button id="taview" style="width: 100%;height: 80%;"><%=i.categery%></button></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>   
+                <hr>
+           <%}%>
+            <button type="submit" id="del" >- DELET THE TASK</button>
+        </form>
+        
+
+    </div>
+    <script src="/home.js"></script>
+</body>
+</html>

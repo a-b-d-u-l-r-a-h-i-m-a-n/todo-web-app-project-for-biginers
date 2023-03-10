@@ -1,0 +1,23 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "a todo aplication app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TODO"
+  ],
+  "author": "Shaik Abdul Rahiman",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "git": "^0.1.5",
+    "jQuery": "^1.7.4",
+    "mongoose": "^7.0.1",
+    "nodemon": "^2.0.21"
+  }
+}
